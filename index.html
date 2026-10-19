@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <div class="calc-shell">
+    <div class="calc-topbar">
+      <span class="brand">Calc</span>
+      <button class="history-toggle" id="historyToggle" aria-label="Toggle history">🕘 History</button>
+    </div>
+
+    <div class="display">
+      <div class="expression" id="expression" aria-live="polite">&nbsp;</div>
+      <div class="result" id="result">0</div>
+    </div>
+
+    <div class="keypad" id="keypad">
+      <button class="key fn" data-action="clear">AC</button>
+      <button class="key fn" data-action="sign">±</button>
+      <button class="key fn" data-action="percent">%</button>
+      <button class="key op" data-action="operator" data-op="÷">÷</button>
+
+      <button class="key num" data-number="7">7</button>
+      <button class="key num" data-number="8">8</button>
+      <button class="key num" data-number="9">9</button>
+      <button class="key op" data-action="operator" data-op="×">×</button>
+
+      <button class="key num" data-number="4">4</button>
+      <button class="key num" data-number="5">5</button>
+      <button class="key num" data-number="6">6</button>
+      <button class="key op" data-action="operator" data-op="−">−</button>
+
+      <button class="key num" data-number="1">1</button>
+      <button class="key num" data-number="2">2</button>
+      <button class="key num" data-number="3">3</button>
+      <button class="key op" data-action="operator" data-op="+">+</button>
+
+      <button class="key num zero" data-number="0">0</button>
+      <button class="key num" data-action="decimal">.</button>
+      <button class="key equals" data-action="equals">=</button>
+    </div>
+
+    <div class="history-panel" id="historyPanel" hidden>
+      <div class="history-head">
+        <h2>History</h2>
+        <button id="clearHistory">Clear</button>
+      </div>
+      <ul class="history-list" id="historyList"></ul>
+      <p class="history-empty" id="historyEmpty">No calculations yet.</p>
+    </div>
+
+    <p class="kbd-hint">
+      Keyboard: numbers, <kbd>+</kbd> <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd>,
+      <kbd>Enter</kbd> =, <kbd>Backspace</kbd>, <kbd>Esc</kbd> AC
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
